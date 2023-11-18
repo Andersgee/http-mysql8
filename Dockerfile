@@ -99,5 +99,5 @@ COPY app.js /app.js
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
-EXPOSE 3306 33060 4004
+EXPOSE 3306 33060 3000
 CMD ["mysqld"]
