@@ -33,7 +33,7 @@ if no entrypoint is specified then CMD means " pass this list as args to '/bin/s
 
 ## ok
 
-build and run
+build and run, might wanna use something like `-v /my/own/datadir:/var/lib/mysql`
 
 ```sh
 sudo docker build -t test:latest .

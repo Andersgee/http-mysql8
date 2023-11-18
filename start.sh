@@ -12,3 +12,6 @@
 
 
 #docker run --name my-own-mysql8-with-node-app -e MYSQL_ROOT_PASSWORD=somerootpw -e MYSQL_USER=anders -e MYSQL_PASSWORD=somepw test:latest
+
+
+
