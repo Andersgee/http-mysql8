@@ -54,3 +54,10 @@ stop and remove
 sudo docker container stop andy-node-mysql
 sudo docker container rm andy-node-mysql
 ```
+
+## actually docker-compose after all
+
+```sh
+docker compose build
+docker compose up
+```
