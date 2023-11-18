@@ -94,8 +94,11 @@ COPY docker-entrypoint.sh /usr/local/bin/
 # backwards compat
 #RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh 
 
-#andy 
-COPY app.js /app.js
+#app 
+COPY app/ /app/
+WORKDIR /app
+RUN npm install --production
+
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 

@@ -1,0 +1,21 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "node dist/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "devalue": "^4.3.2",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.24.3",
+    "kysely": "^0.26.3",
+    "mysql2": "^3.6.3",
+    "zod": "^3.22.4"
+  }
+}

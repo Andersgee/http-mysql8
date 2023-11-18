@@ -428,8 +428,15 @@ _main() {
 			mysql_socket_fix
 		fi
 	fi
+	#original:
 	#exec "$@"
-	node /app.js & exec "$@"
+
+	#works fine:
+	#node /app.js & exec "$@"
+
+	#test this
+	cd /app
+	npm start & exec "$@"
 }
 
 # If we are sourced from elsewhere, don't perform any further actions
