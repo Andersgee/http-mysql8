@@ -38,6 +38,8 @@ build and run, might wanna use something like `-v /my/own/datadir:/var/lib/mysql
 ```sh
 sudo docker build -t test:latest .
 sudo docker run --name andy-node-mysql -e MYSQL_ROOT_PASSWORD=somerootpw -e MYSQL_USER=anders -e MYSQL_PASSWORD=somepw test:latest
+
+sudo docker run --name andy-node-mysql --env-file ./.env test:latest
 ```
 
 stop and remove
