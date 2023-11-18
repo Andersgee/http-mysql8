@@ -4,7 +4,8 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM debian:bullseye-slim
+#FROM debian:bullseye-slim
+FROM node:20-bullseye-slim
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r mysql && useradd -r -g mysql mysql
@@ -90,8 +91,13 @@ VOLUME /var/lib/mysql
 # Config files
 COPY config/ /etc/mysql/
 COPY docker-entrypoint.sh /usr/local/bin/
-RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
+# backwards compat
+#RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh 
+
+#andy 
+COPY app.js /app.js
+
 ENTRYPOINT ["docker-entrypoint.sh"]
 
-EXPOSE 3306 33060
+EXPOSE 3306 33060 4004
 CMD ["mysqld"]

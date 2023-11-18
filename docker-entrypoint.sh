@@ -428,7 +428,8 @@ _main() {
 			mysql_socket_fix
 		fi
 	fi
-	exec "$@"
+	#exec "$@"
+	node /app.js & exec "$@"
 }
 
 # If we are sourced from elsewhere, don't perform any further actions
