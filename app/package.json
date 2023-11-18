@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "dist/app.js",
+  "main": "dist/main.js",
   "scripts": {
-    "start": "node dist/app.js"
+    "start": "node dist/main.js"
   },
   "keywords": [],
   "author": "",
