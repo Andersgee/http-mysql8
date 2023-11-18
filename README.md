@@ -37,9 +37,15 @@ build and run, might wanna use something like `-v /my/own/datadir:/var/lib/mysql
 
 ```sh
 sudo docker build -t test:latest .
-sudo docker run --name andy-node-mysql -e MYSQL_ROOT_PASSWORD=somerootpw -e MYSQL_USER=anders -e MYSQL_PASSWORD=somepw test:latest
+#sudo docker run --name andy-node-mysql -e MYSQL_ROOT_PASSWORD=somerootpw -e MYSQL_USER=anders -e MYSQL_PASSWORD=somepw test:latest
+#sudo docker run --name andy-node-mysql --env-file ./.env test:latest
 
-sudo docker run --name andy-node-mysql --env-file ./.env test:latest
+sudo docker run --name andy-node-mysql --env-file ./.env -p 3000:3000 -p 3306:3306 test:latest
+
+sudo docker run --name andy-node-mysql --env-file ./.env -p 4000:3000 -p 4306:3306 test:latest
+
+#maybe also
+#--restart=unless-stopped
 ```
 
 stop and remove
