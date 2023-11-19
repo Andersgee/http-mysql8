@@ -435,7 +435,7 @@ _main() {
 	#node /app.js & exec "$@"
 
 	#test this
-	cd /app
+	#cd /app
 	npm start & exec "$@"
 }
 

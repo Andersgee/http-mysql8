@@ -92,13 +92,17 @@ VOLUME /var/lib/mysql
 COPY config/ /etc/mysql/
 COPY docker-entrypoint.sh /usr/local/bin/
 # backwards compat
-#RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh 
+#RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh
+
+#the copy pasted stuff above creates a mysql user but never creates a home folder for it.
+#its needed for npm cache eg /home/mysql/.npm and .bashrc etc
+RUN mkdir /home/mysql
+RUN chown mysql /home/mysql
 
 #app 
 COPY app/ /app/
 WORKDIR /app
 RUN npm install --production
-
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
