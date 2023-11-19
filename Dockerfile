@@ -4,6 +4,8 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
+#edited from https://github.com/docker-library/mysql/blob/84ba05eaa75e1f0e1d33185e23f95a9cdc607b51/8.0/Dockerfile.debian
+
 #FROM debian:bullseye-slim
 FROM node:20-bullseye-slim
 
@@ -106,5 +108,5 @@ RUN npm install --production
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
-EXPOSE 3306 33060 3000
+EXPOSE 3306 3000
 CMD ["mysqld"]
