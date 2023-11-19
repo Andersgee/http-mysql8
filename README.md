@@ -5,8 +5,8 @@ Adapted from the regular [mysq:8.0 image](https://github.com/docker-library/mysq
 ### run on another machine
 
 copy `docker-compose.yml` and `.env`
-then run `sudo docker compose up`
-(pull updated image with: `sudo docker compose pull db`)
+then run `docker compose up`
+(pull updated image with: `docker compose pull db`)
 
 ### dev
 
@@ -20,6 +20,6 @@ docker push andersgee/http-mysql8
 ### other
 
 shell to running container
-`sudo docker exec -it SOME_CONTAINER_ID /bin/bash`
+`docker exec -it SOME_CONTAINER_ID /bin/bash`
 remove volumes (delete db data)
-`sudo docker compose down -v`
+`docker compose down -v`
