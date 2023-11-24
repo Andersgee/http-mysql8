@@ -7,10 +7,6 @@ The regular [mysq:8.0 image](https://hub.docker.com/_/mysql) but also with a htt
 with an `.env` file like this
 
 ```sh
-#published ports
-DB_PORT=3306
-DB_HTTP_PORT=4000
-
 #for db
 MYSQL_USER=someuser
 MYSQL_PASSWORD=somepassword
@@ -43,12 +39,9 @@ services:
     restart: unless-stopped
     env_file:
       - ./.env
-    expose:
-      - 3000
-      - 3306
     ports:
-      - $DB_HTTP_PORT:3000
-      - $DB_PORT:3306
+      - 4000:3000
+      - 3306:3306
     volumes:
       - db-data:/var/lib/mysql
 
