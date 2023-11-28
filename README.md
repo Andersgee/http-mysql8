@@ -6,7 +6,7 @@ The regular [mysq:8.0 image](https://hub.docker.com/_/mysql) but also with a htt
 
 with an `.env` file like this
 
-```sh
+```
 #for db
 MYSQL_USER=someuser
 MYSQL_PASSWORD=somepassword
@@ -14,6 +14,7 @@ MYSQL_DATABASE=db
 MYSQL_ROOT_PASSWORD=somepassword
 #for http-db
 DB_HTTP_AUTH_HEADER=Basic someauthheader
+DB_HTTP_LISTEN_ADRESS=0.0.0.0:3000
 DATABASE_URL=mysql://someuser:somepassword@127.0.0.1:3306/db
 ```
 
@@ -144,6 +145,11 @@ docker compose build
 #step 3: upload image
 #docker push andersgee/http-mysql8
 docker push yourusername/someimagename
+
+#also push a tag
+docker tag andersgee/http-mysql8 andersgee/http-mysql8:1.0
+docker push andersgee/http-mysql8:1.0
+
 ```
 
 other

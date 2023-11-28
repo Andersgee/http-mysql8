@@ -24,12 +24,12 @@ server.route({
   },
 });
 async function start() {
-  const PORT = 3000;
+  const [host, port] = process.env.DB_HTTP_LISTEN_ADRESS.split(":");
   try {
-    console.log(`http-db listening on port ${PORT}`);
+    console.log(`http-db listening on ${process.env.DB_HTTP_LISTEN_ADRESS}`);
     await server.listen({
-      host: "0.0.0.0",
-      port: PORT,
+      host: host,
+      port: Number(port ?? "3000"),
     });
   } catch (err) {
     server.log.error(err);
